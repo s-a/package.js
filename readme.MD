@@ -21,9 +21,22 @@ This implements an easy way to distribute packages akka addons or plugins for no
 
 ```
 var packageDirectories = [path.join(webRoot, "node_modules"), path.join(webRoot, "packages")];
-packageController.autoload({"expectedPackageIdentifier": ["pandaPackage", true], "directories": packageDirectories, "packageContstructorSettings": {app:app}});
+packageController.autoload({
+	"expectedPackageIdentifier": ["pandaPackage", true], 
+	"directories": packageDirectories, 
+	"packageContstructorSettings": {app:app}
+});
 ```
 
+Each package must contain a package json which is normaly used by NPM but with an extra field.  
+
+## Package.json example
+```
+{
+	"name": "flying-panda-file-icons",
+	"pandaPackage" : true
+}
+```
 
 ## Example package code
 ```
