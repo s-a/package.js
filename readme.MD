@@ -1,7 +1,15 @@
 # package.js
 
 
-## Usage:
+[![NPM Version](http://img.shields.io/npm/v/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
+[![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
+
+
+## Installtion
+```npm install package.js```  
+
+
+## Usage
 
 ```
 var packageController = require("./../packages/package.js/");
@@ -17,7 +25,7 @@ packageController.autoload({"expectedPackageIdentifier": ["pandaPackage", true],
 ```
 
 
-## Example package code:
+## Example package code
 ```
 var FileIcons = function(config) {
 	 
