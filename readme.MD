@@ -9,7 +9,7 @@ var packageController = require("./../packages/package.js/");
 
 The following code checks the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing ```index.js``` if a ```package.json``` file was found in ```packageDirectories``` which contains the ```expectedPackageIdentifier```. In this case ```{pandaPackage : true}```.
 package.js will pass the ```packageContstructorSettings``` to the ```new``` ```require```d node module.  
-This implements an easy way to distribute packages akka addons or plugins for node application via NPM or other package distribution networks.  
+This implements an easy way to distribute packages akka addons or plugins for node applications via NPM or other package distribution networks.  
 
 ```
 var packageDirectories = [path.join(webRoot, "node_modules"), path.join(webRoot, "packages")];
