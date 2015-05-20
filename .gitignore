@@ -1,0 +1,7 @@
+node_modules
+bower_components
+lib-cov
+*.log
+*.sublime-project
+*.sublime-workspace
+coverage.html
