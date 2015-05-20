@@ -4,8 +4,8 @@
   "preferGlobal": false,
   "main": "./index.js",
   "license": "MIT",
-  "description": "A node.js package loader to distribute plugins via package distribution networks like npm",
-  "version": "0.1.2",
+  "description": "A simple (custom) package (auto) loader for node.js apps which supports NPM or other package managers",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/s-a/package.js.git"
