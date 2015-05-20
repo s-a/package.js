@@ -5,7 +5,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
 
 
-## Installtion
+## Install
 ```npm install package.js```  
 
 
