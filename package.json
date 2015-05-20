@@ -5,7 +5,7 @@
   "main": "./index.js",
   "license": "MIT",
   "description": "A node.js package loader to distribute plugins via package distribution networks like npm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/s-a/package.js.git"
