@@ -1,13 +1,14 @@
 # package.js
 
+## Open your node apps for plugin developers
 
+[![Build Status](http://img.shields.io/travis/s-a/package.js.svg?style=flat-square)](https://travis-ci.org/s-a/package.js)
+[![Codacy Badge](https://www.codacy.com/project/badge/aa693627f7f2424db1fa0cc2871f1aa5)](https://www.codacy.com/app/stephanahlf/package-js)
 [![NPM Version](http://img.shields.io/npm/v/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
 [![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
 
-
 ## Install
 ```npm install package.js```  
-
 
 ## Usage
 
@@ -15,16 +16,16 @@
 var packageController = require("./../packages/package.js/");
 ```
 
-The following code checks the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing ```index.js``` if a ```package.json``` file was found in ```packageDirectories``` which contains the ```expectedPackageIdentifier```. In this case ```{pandaPackage : true}```.
+The following code scans the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing ```index.js``` if a ```package.json``` file was found in ```packageDirectories``` which contains the ```expectedPackageIdentifier```. In this case ```{pandaPackage : true}```.
 package.js will pass the ```packageContstructorSettings``` to the ```new``` ```require```d node module.  
 This implements an easy way to distribute packages akka addons or plugins for node applications via NPM or other package distribution networks.  
 
 ```
-var packageDirectories = [path.join(webRoot, "node_modules"), path.join(webRoot, "packages")];
-packageController.autoload({
-	"expectedPackageIdentifier": ["pandaPackage", true], 
-	"directories": packageDirectories, 
-	"packageContstructorSettings": {app:app}
+var packageDirectories = [path.join(webRoot, "node_modules"), path.join(webRoot, "packages")];  
+packageController.autoload({  
+	"expectedPackageIdentifier": ["pandaPackage", true],  
+	"directories": packageDirectories,  
+	"packageContstructorSettings": {app:app}  
 });
 ```
 
@@ -50,11 +51,6 @@ var FileIcons = function(config) {
 			result = "fa fa-file-o";
 		}
 
-		var ext = fileSystemItem.ext.toLowerCase();
-		if (iconClasses[ext]){
-			result = iconClasses[ext];
-		}
-
 		fileSystemItem.icon = result;
 	};
 
@@ -65,6 +61,8 @@ var FileIcons = function(config) {
 
 module.exports = FileIcons;
 ```
+
+Check out the test suites for more detailed usage examples at [https://github.com/s-a/package.js/test](https://github.com/s-a/package.js/test).
 
 ## License
 
