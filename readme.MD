@@ -3,6 +3,7 @@
 ## Open your node apps for plugin developers
 
 [![Build Status](http://img.shields.io/travis/s-a/package.js.svg?style=flat-square)](https://travis-ci.org/s-a/package.js)
+[![Coverage Status](https://coveralls.io/repos/s-a/package.js/badge.svg)](https://coveralls.io/r/s-a/package.js)
 [![Codacy Badge](https://www.codacy.com/project/badge/aa693627f7f2424db1fa0cc2871f1aa5)](https://www.codacy.com/app/stephanahlf/package-js)
 [![NPM Version](http://img.shields.io/npm/v/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
 [![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
