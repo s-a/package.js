@@ -1,8 +1,11 @@
 {
   "name": "package.js",
-  "author": "Stephan Ahlf",
+  "author": {
+    "name": "Stephan Ahlf",
+    "email": "stephan.ahlf@gmail.com"
+  },
   "preferGlobal": false,
-  "main": "./index.js",
+  "main": "./lib/index.js",
   "license": "MIT",
   "description": "A simple (custom) package (auto) loader for node.js apps which supports NPM or other package managers",
   "version": "0.1.4",
@@ -12,13 +15,17 @@
   },
   "scripts": {
     "test": "mocha",
-    "cover-html": "jscoverage lib lib-cov && mocha -R html-cov > coverage.html && rm lib-cov/*.*",
-    "docs-test": "node ./lib/index.js --file=use-case-main.js --describe=* --output=lib-doc/use-case-main.js.MD",
-    "docs": "node ./lib/index.js --file=lib/deep.js --describe=Deep --output=lib-doc/api-package.js.MD"
+    "cover-html": "jscoverage lib lib-cov && mocha -R html-cov > coverage.html && rm lib-cov/*.*"
   },
   "engines": {
     "node": ">=0.8.0"
   },
+  "contributors": [],
+  "keywords": [
+    "plugin",
+    "addon",
+    "package"
+  ],
   "dependencies": {
   },
   "devDependencies": {
