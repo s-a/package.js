@@ -8,8 +8,8 @@
 [![NPM Version](http://img.shields.io/npm/v/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)
 [![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg?style=flat)](https://www.npmjs.org/package/package.js)  
 
-[![Dependencies](https://img.shields.io/david/s-a/package.js)](#)
-[![Development Dependencies](https://img.shields.io/david/dev/s-a/package.js)](#)
+[![Dependencies](https://img.shields.io/david/s-a/package.js.svg)](#)
+[![Development Dependencies](https://img.shields.io/david/dev/s-a/package.js.svg)](#)
 
 ## Install
 ```npm install package.js```  
