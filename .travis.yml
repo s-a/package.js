@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "0.10"
+before_script:
+  - npm install -g mocha
+  - npm install -g coveralls
+after_success:
+  - jscoverage lib lib-cov
+  - NODE_ENV=test mocha -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
