@@ -8,7 +8,7 @@
   "main": "./lib/index.js",
   "license": "MIT",
   "description": "A simple (custom) package (auto) loader for node.js apps which supports NPM or other package managers",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/s-a/package.js.git"
