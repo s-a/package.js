@@ -55,7 +55,7 @@ describe('load installed application packages', function(){
 
 	it('should fire subscribed events of package 1', function(){
 		var fileSystemItem = {_id:0};
-		customApp.events.emit("init-filesystem-item-icon", fileSystemItem);
+		customApp.events.emit("init-filesystem-item-icons", fileSystemItem);
 		fileSystemItem.icon.should.equal("fa fa-folder");
 	});
 
