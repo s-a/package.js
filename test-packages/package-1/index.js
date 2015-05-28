@@ -10,7 +10,7 @@ var Package = function(config) {
 		fileSystemItem.icon = result;
 	};
 
-	config.app.events.on("init-filesystem-item-icon", getFileSystemItemIcon);
+	config.app.events.on("init-filesystem-item-icons", getFileSystemItemIcon);
 
 	return this;
 };
