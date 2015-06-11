@@ -66,7 +66,9 @@ var FileIcons = function(config) {
 module.exports = FileIcons;
 ```
 
-Check out the test suites for more detailed usage examples at [https://github.com/s-a/package.js/tree/master/test](https://github.com/s-a/package.js/tree/master/test).
+Check out the test suites and example text package for a more detailed usage:
+ - [tests](/test/main.js)
+ - [example package](/test-packages/package-1/index.js)
 
 ## License
 
