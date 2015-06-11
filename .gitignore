@@ -1,4 +1,5 @@
 node_modules
+!test-packages/package-1/node_modules/
 bower_components
 lib-cov
 *.log
