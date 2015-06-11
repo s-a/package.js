@@ -42,6 +42,7 @@ before(function  () {
 	];
 	packageController.autoload({
 	    "debug": true,
+	    "directoryScanLevel": 1,
 	    "expectedPackageIdentifier": ["pandaPackage", true],
 	    "directories": packageDirectories,
 	    "packageContstructorSettings": {app:customApp}
@@ -59,5 +60,10 @@ describe('load installed application packages', function(){
 		fileSystemItem.icon.should.equal("fa fa-folder");
 	});
 
+	it('should respect directory scan level of autloader config', function(){
+		for (var i = 0; i < packageController.loadedPlugins.length; i++) {
+			var plugin = packageController.loadedPlugins[i];
+			plugin.meta.name.should.not.equal("test-package-2")
+		}
+	});
 });
-
