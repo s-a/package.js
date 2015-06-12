@@ -46,8 +46,9 @@ packageController.autoload({
   
 The context of the ```identify``` method is the package itself. So far you have access there to the following properties: 
  - ```dir``` - The package directory.
- - ```meta``` - The package meta data fetched from its ```package.json```.
-A package is marked as identifed if ```identify()``` returns ```true (boolean)```.  
+ - ```meta``` - The package meta data fetched from its ```package.json```.  
+ 
+A package is marked as identified if ```identify()``` returns ```true (boolean)```.  
 
 
 
