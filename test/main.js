@@ -37,18 +37,20 @@ before(function  () {
 	customApp = new CustomApp();
 
 	var packageDirectories = [
-		//path.join(__dirname,"..", "node_modules"), 
+		path.join(__dirname,"..", "node_modules"), 
 		path.join(__dirname, "..", "test-packages")
 	];
 	packageController.autoload({
-	    "debug": true,
-	    "directoryScanLevel": 1,
-	    "expectedPackageIdentifier": ["pandaPackage", true],
-	    "directories": packageDirectories,
-	    "packageContstructorSettings": {app:customApp}
+	    debug: !coverageMode,
+	    directoryScanLevel: 2,
+	    // expectedPackageIdentifier: ["pandaPackage", true], obsolete. Use identify instead.
+	    identify : function() {
+	    	// console.log("testing", this.meta.name, "...");
+	    	return !!this.meta.pandaPackage;
+	    },
+	    directories: packageDirectories,
+	    packageContstructorSettings: {app:customApp}
 	});
-
-	//console.log(packageController);
 });
 
 
@@ -65,5 +67,9 @@ describe('load installed application packages', function(){
 			var plugin = packageController.loadedPlugins[i];
 			plugin.meta.name.should.not.equal("test-package-2")
 		}
+	});
+
+	it('should load only one package', function(){
+		packageController.loadedPlugins.length.should.equal(1);
 	});
 });
