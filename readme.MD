@@ -25,13 +25,31 @@ package.js will pass the ```packageContstructorSettings``` to the ```new``` ```r
 This implements an easy way to distribute packages akka addons or plugins for node applications via NPM or other package distribution networks.  
 
 ```
-var packageDirectories = [path.join(webRoot, "node_modules"), path.join(webRoot, "packages")];  
-packageController.autoload({  
-	"expectedPackageIdentifier": ["pandaPackage", true],  
-	"directories": packageDirectories,  
-	"packageContstructorSettings": {app:app}  
+customApp = new CustomApp();
+
+var packageDirectories = [
+	path.join(__dirname,"..", "node_modules"), 
+	path.join(__dirname, "..", "test-packages")
+];
+packageController.autoload({
+    debug: !coverageMode,			// defines if log messages should show.
+    directoryScanLevel: 2,			// defines how deep the autoloader should scan the directory structure.
+    // expectedPackageIdentifier: ["pandaPackage", true], obsolete. Use identify instead.
+    identify : function() {			// identifies your application package.
+    	// console.log("testing", this.meta.name, "...");
+    	return !!this.meta.pandaPackage;
+    },
+    directories: packageDirectories,
+    packageContstructorSettings: {app:customApp}
 });
 ```
+  
+The context of the ```identify``` method is the package itself. So far you have access there to the following properties: 
+ - ```dir``` - The package directory.
+ - ```meta``` - The package meta data fetched from its ```package.json```.
+A package is marked as identifed if ```identify()``` returns ```true (boolean)```.  
+
+
 
 Each package must contain a package json which is normaly used by NPM but with an extra field.  
 
