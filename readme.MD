@@ -15,7 +15,7 @@ This implements an easy way to distribute packages akka addons or plugins for no
 
 
 ## Installation
-```npm install package.js;```  
+```npm install package.js --save;```  
 
 
 ## Usage
