@@ -19,7 +19,7 @@ This implements an easy way to distribute packages akka addons or plugins for no
 
 
 ## Usage
-A detailed demo of usage can be found at the  [library tests](/test/main.js). To identify an all application packages the method ```autload``` expects a custom method called ```identify``` which will be executed for each package with the context  of the package itself. So far you have access there to the following properties: 
+A detailed demo of usage can be found at the  [library tests](/test/main.js). To identify all application packages the method ```autoload``` expects a custom method called ```identify``` which will be executed for each package with the context  of the package itself. So far you have access there to the following properties: 
  - ```this.dir``` - The package directory.
  - ```this.meta``` - The package meta data fetched from its ```package.json```.  
 A package is marked as identified if ```identify()``` returns ```true (boolean)```.  
