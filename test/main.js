@@ -10,7 +10,7 @@ var packageController;
 try {
 	packageController = require("./../lib-cov/index.js");
 } catch(e){
- 	packageController = require("./../lib/index.js");
+	packageController = require("./../lib/index.js");
 }
 
 if (coverageMode){
@@ -37,18 +37,46 @@ before(function  () {
 	customApp = new CustomApp();
 
 	var packageDirectories = [
-		//path.join(__dirname,"..", "node_modules"), 
+		path.join(__dirname,"..", "node_modules"), 
 		path.join(__dirname, "..", "test-packages")
 	];
-	packageController.autoload({
-	    "debug": true,
-	    "directoryScanLevel": 1,
-	    "expectedPackageIdentifier": ["pandaPackage", true],
-	    "directories": packageDirectories,
-	    "packageContstructorSettings": {app:customApp}
+
+	// wrong usage
+	it('should throw expectedPackageIdentifier as obsolete.', function(){
+		(function(){
+			packageController.autoload({
+				debug: !coverageMode,
+				expectedPackageIdentifier: ["pandaPackage", true],
+				directories: packageDirectories,
+				packageContstructorSettings: {app:customApp}
+			});
+		}).should.throw();
 	});
 
-	//console.log(packageController);
+	it('should throw missing identify method error.', function(){
+		(function(){
+			packageController.autoload({
+				debug: !coverageMode,
+				directories: packageDirectories,
+				packageContstructorSettings: {app:customApp}
+			});
+		}).should.throw();
+	});
+
+
+
+	// correct usage
+	packageController.autoload({
+		debug: !coverageMode,
+		directoryScanLevel: 2,
+		// expectedPackageIdentifier: ["pandaPackage", true], obsolete. Use identify instead.
+		identify : function() {
+			// console.log("testing", this.meta.name, "...");
+			return !!this.meta.pandaPackage;
+		},
+		directories: packageDirectories,
+		packageContstructorSettings: {app:customApp}
+	});
 });
 
 
@@ -65,5 +93,9 @@ describe('load installed application packages', function(){
 			var plugin = packageController.loadedPlugins[i];
 			plugin.meta.name.should.not.equal("test-package-2")
 		}
+	});
+
+	it('should load only one package', function(){
+		packageController.loadedPlugins.length.should.equal(1);
 	});
 });
