@@ -10,7 +10,7 @@ var packageController;
 try {
 	packageController = require("./../lib-cov/index.js");
 } catch(e){
- 	packageController = require("./../lib/index.js");
+	packageController = require("./../lib/index.js");
 }
 
 if (coverageMode){
@@ -40,16 +40,42 @@ before(function  () {
 		path.join(__dirname,"..", "node_modules"), 
 		path.join(__dirname, "..", "test-packages")
 	];
+
+	// wrong usage
+	it('should throw expectedPackageIdentifier as obsolete.', function(){
+		(function(){
+			packageController.autoload({
+				debug: !coverageMode,
+				expectedPackageIdentifier: ["pandaPackage", true],
+				directories: packageDirectories,
+				packageContstructorSettings: {app:customApp}
+			});
+		}).should.throw();
+	});
+
+	it('should throw missing identify method error.', function(){
+		(function(){
+			packageController.autoload({
+				debug: !coverageMode,
+				directories: packageDirectories,
+				packageContstructorSettings: {app:customApp}
+			});
+		}).should.throw();
+	});
+
+
+
+	// correct usage
 	packageController.autoload({
-	    debug: !coverageMode,
-	    directoryScanLevel: 2,
-	    // expectedPackageIdentifier: ["pandaPackage", true], obsolete. Use identify instead.
-	    identify : function() {
-	    	// console.log("testing", this.meta.name, "...");
-	    	return !!this.meta.pandaPackage;
-	    },
-	    directories: packageDirectories,
-	    packageContstructorSettings: {app:customApp}
+		debug: !coverageMode,
+		directoryScanLevel: 2,
+		// expectedPackageIdentifier: ["pandaPackage", true], obsolete. Use identify instead.
+		identify : function() {
+			// console.log("testing", this.meta.name, "...");
+			return !!this.meta.pandaPackage;
+		},
+		directories: packageDirectories,
+		packageContstructorSettings: {app:customApp}
 	});
 });
 
