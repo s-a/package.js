@@ -6,7 +6,7 @@
   },
   "preferGlobal": false,
   "main": "./lib/index.js",
-  "license": "MIT & GPL3",
+  "license": "(MIT OR GPL-3.0)",
   "description": "A simple (custom) package (auto) loader for node.js apps which supports NPM or other package managers",
   "version": "1.0.0",
   "repository": {

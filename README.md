@@ -29,21 +29,11 @@ A package is marked as identified if ```identify()``` returns ```true (boolean)`
 Each package must contain a file called [```index.js```](/test-packages/package-1/index.js) (the main package library) and a [```package.json```](/test-packages/package-1/package.json) which is normaly used by NPM but with an extra field.  
 [Full example package](/test-packages/package-1/)
 
-## Contributing
+## [Contributing](/CONTRIBUTING.md)
 
- - Fork it!
- - Install development dependencies
-   - ```cd package.js;```
-   - ```npm install;```
- - Create your feature branch: `git checkout -b my-new-feature;`
- - Add a test for each new code
- - Add add your new code
- - Run the tests: `npm test;`
- - Check the coverage ```npm run cover-html;``` will produce a file called ```coverage.html;```
- - Commit your changes: `git commit -am 'Add some feature'`
- - Push to the branch: `git push origin my-new-feature`
- - Submit a pull request :D
+## [License](/LICENSE.md)
+Copyright (c) 2015 Stephan Ahlf <stephan.ahlf@gmail.com>  
+This software is dual licensed under MIT and GNU GENERAL PUBLIC LICENSE Version 3.  
 
-## License
-[<img src="https://s-a.github.io/license/img/mit.svg" />](https://s-a.github.io/license/?license=mit&fullname=Stephan%20Ahlf&year=2015&profile=https://github.com/s-a&projectUrl=https://github.com/s-a/package.js&projectName=package.js "") 
-[<img src="https://s-a.github.io/license/img/gpl-3.0.svg" />](https://s-a.github.io/license/?license=gpl-3.0&fullname=Stephan%20Ahlf&year=2015&profile=https://github.com/s-a&projectUrl=https://github.com/s-a/package.js&projectName=package.js "")
+[<img src="https://s-a.github.io/license/img/mit.svg" />](/LICENSE.md#MIT "Massachusetts Institute of Technology (MIT)") 
+[<img src="https://s-a.github.io/license/img/gpl-3.0.svg" />](/LICENSE.md#GPL-3.0 "GNU GENERAL PUBLIC LICENSE Version 3")
