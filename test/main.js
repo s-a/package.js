@@ -83,9 +83,15 @@ before(function  () {
 describe('load installed application packages', function(){
 
 	it('should fire subscribed events of package 1', function(){
-		var fileSystemItem = {_id:0};
-		customApp.events.emit("init-filesystem-item-icons", fileSystemItem);
-		fileSystemItem.icon.should.equal("fa fa-folder");
+		var item0 = {_id:0};
+		customApp.events.emit("custom-event-0", item0);
+		item0.foo.should.equal("bar");
+	});
+
+	it('should fire subscribed events of package 3', function(){
+		var item = {_id:0};
+		customApp.events.emit("custom-event", item);
+		item.foo.should.equal("bar");
 	});
 
 	it('should respect directory scan level of autloader config', function(){
@@ -95,7 +101,7 @@ describe('load installed application packages', function(){
 		}
 	});
 
-	it('should load only one package', function(){
-		packageController.loadedPlugins.length.should.equal(1);
+	it('should load only two packages', function(){
+		packageController.loadedPlugins.length.should.equal(2);
 	});
 });
