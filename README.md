@@ -17,16 +17,36 @@ This implements an easy way to distribute packages akka addons or plugins for no
 ## Installation
 ```npm install package.js --save;```  
 
+## Example
+```
+var path = require('path');
+var events = require('events');
+var packageController = require("package.js");
 
-## Usage
-A detailed demo of usage can be found at the  [library tests](/test/main.js). To identify all application packages the method ```autoload``` expects a custom method called ```identify``` which will be executed for each package with the context  of the package itself. So far you have access there to the following properties: 
+var CustomApp = function  () {
+	this.events = new events.EventEmitter();
+	return this;
+};
+
+var customApp = new CustomApp();
+
+packageController.autoload({
+	debug: true,
+	identify: function() {
+		return this.pandaPackage = true;
+	},
+	directories: [path.join(__dirname, "node_modules")],
+	packageContstructorSettings: {app:customApp}
+});
+```
+To identify all application packages the method ```autoload``` expects a custom method called ```identify``` which will be executed for each package with the context  of the package itself. So far you have access there to the following properties: 
  - ```this.dir``` - The package directory.
  - ```this.meta``` - The package meta data fetched from its ```package.json```.  
 A package is marked as identified if ```identify()``` returns ```true (boolean)```.  
+A detailed demo of usage can be found in the [library tests](/test/main.js). 
 
-
-## Custom Application Package 
-Each package must contain a file called [```index.js```](/test-packages/package-1/index.js) (the main package library) and a [```package.json```](/test-packages/package-1/package.json) which is normaly used by NPM but with an extra field.  
+## Application Packages 
+Each package must contain a file called [```index.js```](/test-packages/package-1/index.js) (the main package library) and a [```package.json```](/test-packages/package-1/package.json) which is normaly used by NPM but maybe with an extra field.  
 [Full example package](/test-packages/package-1/)
 
 ## [Contributing](/CONTRIBUTING.md)
