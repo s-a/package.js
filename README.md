@@ -35,5 +35,5 @@ Each package must contain a file called [```index.js```](/test-packages/package-
 Copyright (c) 2015 Stephan Ahlf <stephan.ahlf@gmail.com>  
 This software is dual licensed under MIT and GNU GENERAL PUBLIC LICENSE Version 3.  
 
-[<img src="https://s-a.github.io/license/img/mit.svg" />](/LICENSE.md#MIT "Massachusetts Institute of Technology (MIT)") 
-[<img src="https://s-a.github.io/license/img/gpl-3.0.svg" />](/LICENSE.md#GPL-3.0 "GNU GENERAL PUBLIC LICENSE Version 3")
+[<img src="https://s-a.github.io/license/img/mit.svg" />](/LICENSE.md#mit "Massachusetts Institute of Technology (MIT)") 
+[<img src="https://s-a.github.io/license/img/gpl-3.0.svg" />](/LICENSE.md#gpl-30 "GNU GENERAL PUBLIC LICENSE Version 3")
