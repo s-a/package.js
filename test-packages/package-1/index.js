@@ -1,16 +1,10 @@
 var Package = function(config) {
 	 
-	var getFileSystemItemIcon = function(fileSystemItem) {
-		var result = "";
-		if (fileSystemItem._id === 0){
-			result = "fa fa-folder";
-		} else {
-			result = "fa fa-file-o";
-		}
-		fileSystemItem.icon = result;
+	var customEventHandler = function(item) {
+		item.foo = "bar";
 	};
 
-	config.app.events.on("init-filesystem-item-icons", getFileSystemItemIcon);
+	config.app.events.on("custom-event-0", customEventHandler);
 
 	return this;
 };
