@@ -9,7 +9,7 @@
 [![Development Dependencies](https://img.shields.io/david/dev/s-a/package.js.svg)](https://www.npmjs.org/package/package.js)
 
 ## Open your node apps for plugin developers
-package.js scans the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing ```index.js``` if a ```package.json``` file was found which contains expected package identifier(s). In the example case let us say ```{pandaPackage : true}```.
+package.js scans the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing the main JavasScript file if a ```package.json``` file was found which contains expected package identifier(s). In the example case let us say ```{pandaPackage : true}```.
 package.js will pass the ```packageContstructorSettings``` to the ```new``` ```require```d node module.  
 This implements an easy way to distribute packages akka addons or plugins for node applications via NPM or other package distribution networks.  
 
@@ -46,7 +46,7 @@ A package is marked as identified if ```identify()``` returns ```true (boolean)`
 A detailed demo of usage can be found in the [library tests](/test/main.js). 
 
 ## Application Packages 
-Each package must contain a file called [```index.js```](/test-packages/package-1/index.js) (the main package library) and a [```package.json```](/test-packages/package-1/package.json) which is normaly used by NPM but maybe with an extra field.  
+Each package must contain a file called [```package.json```](/test-packages/package-1/package.json) which is normaly used by NPM but maybe with an extra field to identify you application plugins.  
 [Full example package](/test-packages/package-1/)
 
 ## [Contributing](/CONTRIBUTING.md)
