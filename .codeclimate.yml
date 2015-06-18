@@ -4,6 +4,6 @@ languages:
   JavaScript: true
   PHP: true
   Python: true
-  exclude_paths:
-  - "test/*"
-  - "test-packages/*"
+exclude_paths:
+ - "test/*"
+ - "test-packages/*"
