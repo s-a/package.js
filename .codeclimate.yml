@@ -5,5 +5,5 @@ languages:
   PHP: true
   Python: true
   exclude_paths:
-  - "test"
-  - "test-packages"
+  - "test/*"
+  - "test-packages/*"
