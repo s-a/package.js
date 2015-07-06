@@ -35,7 +35,7 @@ var customApp = new CustomApp();
 packageController.autoload({
 	debug: true,
 	identify: function() {
-		return this.pandaPackage === true;
+		return (this.meta.pandaPackage === true);
 	},
 	directories: [path.join(__dirname, "node_modules")],
 	packageContstructorSettings: {app:customApp}
