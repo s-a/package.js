@@ -6,7 +6,8 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/package.js.svg)](https://www.npmjs.org/package/package.js)  
 
 [![Dependencies](https://img.shields.io/david/s-a/package.js.svg)](https://www.npmjs.org/package/package.js)
-[![Development Dependencies](https://img.shields.io/david/dev/s-a/package.js.svg)](https://www.npmjs.org/package/package.js)
+[![Development Dependencies](https://img.shields.io/david/dev/s-a/package.js.svg)](https://www.npmjs.org/package/package.js)  
+[![Donate](http://s-a.github.io/donate/donate.svg)](http://s-a.github.io/donate/)
 
 ## Open your node apps for plugin developers
 package.js scans the given ```packageDirectories``` for your installed application packages and creates an instance by ```require```ing the main JavasScript file if a ```package.json``` file was found which contains expected package identifier(s). In the example case let us say ```{pandaPackage : true}```.
