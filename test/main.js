@@ -37,7 +37,7 @@ before(function  () {
 	customApp = new CustomApp();
 
 	var packageDirectories = [
-		path.join(__dirname,"..", "node_modules"), 
+		path.join(__dirname,"..", "node_modules"),
 		path.join(__dirname, "..", "test-packages")
 	];
 
@@ -48,7 +48,7 @@ before(function  () {
 				debug: !coverageMode,
 				expectedPackageIdentifier: ["pandaPackage", true],
 				directories: packageDirectories,
-				packageContstructorSettings: {app:customApp}
+				packageConstructorSettings: {app:customApp}
 			});
 		}).should.throw();
 	});
@@ -58,7 +58,7 @@ before(function  () {
 			packageController.autoload({
 				debug: !coverageMode,
 				directories: packageDirectories,
-				packageContstructorSettings: {app:customApp}
+				packageConstructorSettings: {app:customApp}
 			});
 		}).should.throw();
 	});
@@ -75,7 +75,7 @@ before(function  () {
 			return !!this.meta.pandaPackage;
 		},
 		directories: packageDirectories,
-		packageContstructorSettings: {app:customApp}
+		packageConstructorSettings: {app:customApp}
 	});
 });
 
